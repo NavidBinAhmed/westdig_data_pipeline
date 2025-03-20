@@ -33,10 +33,10 @@ environment:
 venv
 
 CICD & packages:
-.gitignore
-Dockerfile
-ReadME
-requirements.txt
+- .gitignore
+- Dockerfile
+- README.md
+- requirements.txt
 
 ### Procedure
 Step 1:
@@ -63,11 +63,10 @@ Step 4:
 - Build a frontemnd using Tablaue or FET
 
 
+### Demo application
 
-![produc-lists](image.png)
+![onpgadmin_db](https://github.com/user-attachments/assets/18caa943-6f98-462d-b563-14f3a02c9264)
 
+![fetch-products](https://github.com/user-attachments/assets/c459c050-3db1-4681-8047-be75347e0960)
 
-![Fetch-products](image-1.png)
-
-
-![database-connection](image-2.png)
+![products_browser](https://github.com/user-attachments/assets/839d5690-e4a9-47aa-931b-d9af79403991)
