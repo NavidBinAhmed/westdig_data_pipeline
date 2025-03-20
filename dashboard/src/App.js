@@ -11,7 +11,7 @@ function App() {
     useEffect(() => {
       axios.get(API_URL)
           .then(response => {
-              console.log("Fetched Data:", response.data);  // Debugging
+              console.log("Fetched Data:", response.data);  // for Debugging
               setProducts(response.data);
           })
           .catch(error => console.error("Error fetching products:", error));
@@ -23,7 +23,7 @@ function App() {
 
     return (
         <div style={{ padding: "20px" }}>
-            <h1>Product Dashboard</h1>
+            <h1>Navid's Product Dashboard: Demo for Western Digital</h1>
 
             {/* Data Table */}
             <Table 

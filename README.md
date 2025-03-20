@@ -43,28 +43,30 @@ CICD & packages:
 Step 1:
 - Create virtual environment and activation of environment
 - Installation of requirements
-- main.py files inside 'app' folder
-- API end points define
+- API end points define in 'main.py'
 - Build Dockerfile and Yaml file
 
 Step 2:
 - Build Docker container:
-docker build --no-cache -t data-pipeline .      
+
+`docker build --no-cache -t data-pipeline .      `
 
 - Run Docker image :
-docker run -p 8000:8000 data-pipeline
+
+`docker run -p 8000:8000 data-pipeline`
 
 - Run Flask Backend:
-uvicorn app.main:app --reload
+
+`uvicorn app.main:app --reload`
 
 - Run React Frontent
-npm start
+`npm start`
 
 Step 3:
-- Automate CICD using GitHub Action
+- Frontend dashboard using React
 
 Step 4:
-- Build a frontemnd using Tablaue or FET
+- Automate CICD using GitHub Action
 
 
 ### Data Visualization Dashboard
