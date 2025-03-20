@@ -65,8 +65,20 @@ Step 4:
 
 ### Demo application
 
+- Data stored on PGAdmin (PostgreSQL database)
+
 ![onpgadmin_db](https://github.com/user-attachments/assets/18caa943-6f98-462d-b563-14f3a02c9264)
+
+
+- Fetching data (POST method)
 
 ![fetch-products](https://github.com/user-attachments/assets/c459c050-3db1-4681-8047-be75347e0960)
 
+- Required data (GET method)
+
 ![products_browser](https://github.com/user-attachments/assets/839d5690-e4a9-47aa-931b-d9af79403991)
+
+
+- Original data source (API)
+
+![fakeapi](https://github.com/user-attachments/assets/b3efdd26-9674-4195-a01f-16164e1b7c18)
