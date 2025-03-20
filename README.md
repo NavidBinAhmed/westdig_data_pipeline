@@ -19,6 +19,7 @@
 - uvicorn
 - Postgresql
 - PGAdmin 4
+- React
 
 
 ### Structure
@@ -53,8 +54,11 @@ docker build --no-cache -t data-pipeline .
 - Run Docker image :
 docker run -p 8000:8000 data-pipeline
 
-- Run via Flask:
+- Run Flask Backend:
 uvicorn app.main:app --reload
+
+- Run React Frontent
+npm start
 
 Step 3:
 - Automate CICD using GitHub Action
@@ -63,7 +67,7 @@ Step 4:
 - Build a frontemnd using Tablaue or FET
 
 
-### Demo Data Visualization Dashboard
+### Data Visualization Dashboard
 - Real Time Dashboard on React app
 
 ![reactdb](https://github.com/user-attachments/assets/5a99c83a-b9ec-4d65-b9d7-17e348a67010)
@@ -74,9 +78,11 @@ Step 4:
 ![onpgadmin_db](https://github.com/user-attachments/assets/18caa943-6f98-462d-b563-14f3a02c9264)
 
 
+
 - Fetching data (POST method)
 
-![fetch_products](https://github.com/user-attachments/assets/c459c050-3db1-4681-8047-be75347e0960)
+![fetch_products](https://github.com/user-attachments/assets/c53ffe6f-bba9-41c0-bce2-8ed125d1d26e)
+
 
 - Required data (GET method)
 
