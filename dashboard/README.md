@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Error Handling: How the errors were handled gracefully
+
+1. React data_fetching issue:
+
+Solved by enabling CORS in main.py, to have helped get fetched_data on react console, this resolved the react issue.
+
+solution demo on the specified file:
+
+`from fastapi.middleware.cors import CORSMiddleware"`
+
+
+2. Docker COPY issue for main.py file
+
+Solved by copying only the app folder.
+
+Solution demo on Dockerfile:
+
+`COPY app /app/app`  
+
+`RUN ls -l /app/app`

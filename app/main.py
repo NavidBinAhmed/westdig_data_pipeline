@@ -4,10 +4,14 @@ from app.database import SessionLocal, engine, Base
 from app import models, schemas, crud
 import requests
 
-# Initialize database
+''' This is the FAST API main file serving as the backend.
+1. At the end, CORS middleware has been enabled to make the data_fetching functional on the react console.
+2. At the retrieval of 'products' section, multiple experiements were undertaken to help the react app work.'''
+
+# Initialization of database
 Base.metadata.create_all(bind=engine)
 
-# Initialize FastAPI app
+# Initialization FastAPI app
 app = FastAPI()
 
 # Dependency to get the database session
@@ -18,7 +22,7 @@ def get_db():
     finally:
         db.close()
 
-# Route to create a new product
+# This is the route to create a new product, as an API endpoint
 @app.post("/products/", response_model=schemas.ProductResponse)
 def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
     return crud.create_product(db, product)
@@ -34,9 +38,10 @@ async def get_products(db: Session = Depends(get_db)):
     print("Database Query Result:", product_list)  # Debugging Log
     return product_list  # Ensure it's returning data'''
 
-# Fetch external data from FakeStoreAPI and store in database
+# This is the API from where the system fetches external data from FakeStoreAPI and store in the local database
 FAKE_STORE_API = "https://fakestoreapi.com/products"
 
+# API endpoint for fetch_product
 @app.get("/fetch_products/")
 def fetch_products(db: Session = Depends(get_db)):
     response = requests.get(FAKE_STORE_API)
@@ -51,7 +56,7 @@ def fetch_products(db: Session = Depends(get_db)):
     return {"message": "Products stored successfully!"}
 
 
-# cors enable: to get fetched_data on react console 
+# cors enable: to get fetched_data on react console, this resolved the react issue
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
