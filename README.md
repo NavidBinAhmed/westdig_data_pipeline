@@ -63,7 +63,11 @@ Step 4:
 - Build a frontemnd using Tablaue or FET
 
 
-### Demo application
+### Demo Data Visualization Dashboard
+- Real Time Dashboard on React app
+
+![reactdb](https://github.com/user-attachments/assets/5a99c83a-b9ec-4d65-b9d7-17e348a67010)
+
 
 - Data stored on PGAdmin (PostgreSQL database)
 
@@ -72,7 +76,7 @@ Step 4:
 
 - Fetching data (POST method)
 
-![fetch-products](https://github.com/user-attachments/assets/c459c050-3db1-4681-8047-be75347e0960)
+![fetch_products](https://github.com/user-attachments/assets/c459c050-3db1-4681-8047-be75347e0960)
 
 - Required data (GET method)
 

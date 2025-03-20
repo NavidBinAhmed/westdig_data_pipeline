@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-import requests
 from app.database import SessionLocal, engine, Base
 from app import models, schemas, crud
+import requests
 
 # Initialize database
 Base.metadata.create_all(bind=engine)
@@ -23,10 +23,16 @@ def get_db():
 def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
     return crud.create_product(db, product)
 
-# Route to retrieve products
+'''# Route to retrieve products
 @app.get("/products/", response_model=list[schemas.ProductResponse])
 def read_products(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    return crud.get_products(db, skip=skip, limit=limit)
+    return crud.get_products(db, skip=skip, limit=limit)'''
+
+@app.get("/products/")
+async def get_products(db: Session = Depends(get_db)):
+    product_list = db.query(models.Product).all()
+    print("Database Query Result:", product_list)  # Debugging Log
+    return product_list  # Ensure it's returning data'''
 
 # Fetch external data from FakeStoreAPI and store in database
 FAKE_STORE_API = "https://fakestoreapi.com/products"
@@ -43,3 +49,15 @@ def fetch_products(db: Session = Depends(get_db)):
         crud.create_product(db, product)
     
     return {"message": "Products stored successfully!"}
+
+
+# cors enable: to get fetched_data on react console 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all domains during testing
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
