@@ -1,0 +1,7 @@
+fastapi 
+sqlalchemy 
+psycopg2 
+pandas 
+requests
+alembic 
+uvicorn
