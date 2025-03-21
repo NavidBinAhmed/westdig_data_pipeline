@@ -1,8 +1,8 @@
 ## End-end Data Pipeline - Demo
-This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that uses an e-commerce API
+This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 ### Features
- - System fetches and shows raw data in a json formant from an external API of a clothing shop
+ - System fetches and shows raw data in a json formant from an external API from an e-commerce platform
 
  - Shows data on browser through FastAPI endpoints
 
