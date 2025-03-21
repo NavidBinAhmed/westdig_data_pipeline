@@ -23,5 +23,15 @@ jobs:
       - name: Build Docker image
         run: docker build -t data-pipeline .
 
+
+
+    # This deploy part currently does not deploy anything on AWS or Render
+    # We have got to configure this, the tentative deployment script
+
+      #- name: Deploy to Server
+      #  run: |
+      #    ssh user@yserver-ip 'docker pull my_docker_user/data-pipeline:latest && docker run -d -p 8000:8000 my_docker_user/data-pipeline'
+      # Upon decided, it may require to set up SSH keys for GitHub Actions to connect.
+
       - name: Deploy
-        run: echo "Deploying application..."  # Add deployment script here
+        run: echo "Deploying application..."  
