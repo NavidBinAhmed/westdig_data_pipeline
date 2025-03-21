@@ -25,15 +25,19 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 
 
 ### Structure
-app:
+app: FastAPI backend
 - crud
 - database
 - main
 - models
 - schemas
 
+dashboard: React frontend
+- src
+- package json
+
 environment:
-venv
+- venv
 
 CICD & packages:
 - .gitignore
