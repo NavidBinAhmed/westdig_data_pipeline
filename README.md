@@ -39,7 +39,7 @@ dashboard: React frontend
 environment:
 - venv
 
-CICD & packages:
+CICD & Packages:
 - .gitignore
 - Dockerfile
 - README.md
@@ -103,3 +103,20 @@ Step 5:
 - Original data source (API)
 
 ![fakeapi](https://github.com/user-attachments/assets/b3efdd26-9674-4195-a01f-16164e1b7c18)
+
+
+
+### Run Locally
+- Download the repo
+- Go to the directory
+- Activate the environment: `venv\Scripts\activate`
+- Run FastAPI: `uvicorn app.main:app --reload`
+- Run React app: `npm start`
+
+Note:
+The required packages are installed inside the `venv`.
+To install a specific version, update in the `requirements.txt` and run the following command after the activation of venv:
+`pip install -r requirements.txt`
+
+Thank you,
+for any installation related help, don't hesitate to give a heads up.
