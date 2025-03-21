@@ -1,12 +1,14 @@
 ## End-end Data Pipeline - Demo
-
+This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that uses an e-commerce API
 
 ### Features
- - system fetches and shares raw data from an external API of a clothing shop
+ - System fetches and shows raw data in a json formant from an external API of a clothing shop
 
- - Visualize data on browser through Flask API endpoints
+ - Shows data on browser through FastAPI endpoints
 
- - Containerized using Docker and CICD pipeline automated using GitHub Action\
+ - Visualizes on a React webapp as a dashboard 
+
+ - Containerized using Docker and CICD pipeline using GitHub Action (ongoing)
 
 
 ### Tools used
@@ -67,6 +69,9 @@ Step 3:
 
 Step 4:
 - Automate CICD using GitHub Action
+
+Step 5:
+- Deployment
 
 
 ### Data Visualization Dashboard
