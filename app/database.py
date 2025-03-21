@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 '''I used local PGAdmin 4 as a database that works on PostgreSQL.
-This file set ups the database and corresponding data sessions.'''
+This simple file set ups the database and corresponding data sessions.'''
 
 
 DATABASE_URL = "postgresql://postgres:pga4_pass12@localhost:5432/data_pipeline"

@@ -38,10 +38,10 @@ async def get_products(db: Session = Depends(get_db)):
     print("Database Query Result:", product_list)  # Debugging Log
     return product_list  # Ensure it's returning data'''
 
-# This is the API from where the system fetches external data from FakeStoreAPI and store in the local database
+# This is the API from where the system fetches external data from FakeStoreAPI and store in the local database PGAdmin 4
 FAKE_STORE_API = "https://fakestoreapi.com/products"
 
-# API endpoint for fetch_product
+# API endpoint for fetch_product, responds as a Json
 @app.get("/fetch_products/")
 def fetch_products(db: Session = Depends(get_db)):
     response = requests.get(FAKE_STORE_API)
@@ -56,7 +56,8 @@ def fetch_products(db: Session = Depends(get_db)):
     return {"message": "Products stored successfully!"}
 
 
-# cors enable: to get fetched_data on react console, this resolved the react issue
+'''I faced issue on react as regards the fetched data placement'''
+# cors enabled to get fetched_data on react console, this resolved the react issue
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(

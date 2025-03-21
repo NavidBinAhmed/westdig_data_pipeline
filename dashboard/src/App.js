@@ -23,8 +23,8 @@ function App() {
 
     return (
         <div style={{ padding: "20px" }}>
-            <h1>Navid's Product Dashboard: Demo for Western Digital</h1>
-
+            <h1>Navid's Data Pipeline Dashboard: Demo for Western Digital</h1>
+            
             {/* Data Table */}
             <Table 
                 dataSource={products} 

@@ -2,8 +2,10 @@ from sqlalchemy.orm import Session
 from app import models, schemas
 
 
-'''This file intends to work on CRUD operations.
-Uses the stored database after extracting the data'''
+'''This draft inteds to work on CRUD operations and data manipulation.
+Uses the stored database after extracting the data
+
+CRUD methods as we require should go here.'''
 
 def create_product(db: Session, product: schemas.ProductCreate):
     db_product = models.Product(**product.dict())
