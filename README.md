@@ -78,6 +78,36 @@ Step 5:
 - Deployment
 
 
+### Deployment on Render
+1. Picked `Webservices`
+
+2. Selected `Git Public Repository` (for privet repository, sign-in to GitHub under 'Git Provider' is required)
+
+3. Next, picked a Name as URL, and Python 3 as *Language
+
+4. Branch is main and Region is Oregon as default
+
+5. Keep Root Directory as it is, it will redirect from GitHub
+
+6. `Build Command`
+
+- pip install -r requirements.txt
+
+- Start Command ( app.api_file.py:app )
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
+
+7. Select Subscription Plan, Free in my case
+
+8. Click Deploy Web Service
+
+
+**Deployed Backend FastAPI Link:** [Link](https://wddp.onrender.com)
+
+**Deployed Frontend React Link:** [Link]
+
+**Deployed Combined Link:** [Link]
+
+
 ### Data Visualization Dashboard
 - Real Time Dashboard on React app
 
