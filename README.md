@@ -90,11 +90,10 @@ Step 5:
 5. Keep Root Directory as it is, it will redirect from GitHub
 
 6. `Build Command`
-
 - pip install -r requirements.txt
 
-- Start Command ( app.api_file.py:app )
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
+`Start Command` ( app.api_file.py:app )
+- gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
 
 7. Select Subscription Plan, Free in my case
 
