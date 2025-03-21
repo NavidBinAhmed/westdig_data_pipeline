@@ -100,11 +100,11 @@ Step 5:
 8. Click Deploy Web Service
 
 
-- **Deployed Backend FastAPI Link:** [Link](https://wddp.onrender.com)
+- **Deployed Backend FastAPI Link:** [NYD]
 
-- **Deployed Frontend React Link:** [Link]
+- **Deployed Frontend React Link:** [NYD]
 
-- **Deployed Combined Link:** [Link]
+- **Deployed (Combined) Link:** [NYD]
 
 
 ### Data Visualization Dashboard
