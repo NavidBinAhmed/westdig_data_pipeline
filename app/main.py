@@ -4,8 +4,7 @@ from app.database import SessionLocal, engine, Base
 from app import models, schemas, crud
 import requests
 
-''' This is the FAST API main file serving as the backend.
-With retrieval of 'products', multiple experiements were undertaken to help the systemm make functional'''
+''' This is the FAST API main file serving as the backend.'''
 
 # Initialization of database
 Base.metadata.create_all(bind=engine)
@@ -35,12 +34,13 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
 @app.get("/products/", response_model=list[schemas.ProductResponse])
 def read_products(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     return crud.get_products(db, skip=skip, limit=limit)'''
-
+    
+'''With retrieval of 'products', multiple experiements were undertaken to help the systemm make functional'''
 @app.get("/products/")
 async def get_products(db: Session = Depends(get_db)):
     product_list = db.query(models.Product).all()
-    print("Database Query Result:", product_list)  # Debugging Log
-    return product_list  # Ensure it's returning data'''
+    print("Database Query Result:", product_list)  # To debug Log
+    return product_list  # Ensures returning of data'''
 
 # This is the API from where the system fetches external data from FakeStoreAPI and store in the local database PGAdmin 4
 FAKE_STORE_API = "https://fakestoreapi.com/products"
@@ -59,8 +59,8 @@ def fetch_products(db: Session = Depends(get_db)):
     
     return {"message": "Products stored successfully!"}
 
-'''CORS middleware has been enabled to make the data_fetching functional on the react console.
-I faced issue on react as regards the fetched data placement'''
+'''CORS middleware has been enabled to make the data_fetching functional.
+React fetched data issue on console'''
 # cors enabled to get fetched_data on react console, this resolved the react issue
 from fastapi.middleware.cors import CORSMiddleware
 

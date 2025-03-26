@@ -1,14 +1,18 @@
-## End-end Data Pipeline : having deployment on Render issue- comnbined back and front end is encounrering troubleshoot (working)
+## End-end Data Pipeline
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
-### Features
- - System fetches and shows raw data in a json formant from an external API from an e-commerce platform
 
- - Shows data on browser through FastAPI endpoints
+### having deployment issue- comnbined back and frontend is encounrering troubleshoot (working)
+
+
+### Features
+ - System fetches and shows raw data on browser in a json formant from an external e-commerce API
 
  - Visualizes on a React webapp as a dashboard 
 
- - Containerized using Docker and CICD pipeline using GitHub Action (ongoing)
+ - Containerized using Docker and automated CI/CD pipeline using GitHub Action
+
+ - Deployed on cloud server - Render
 
 
 ### Tools used
@@ -19,12 +23,13 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 - requests
 - alembic 
 - uvicorn
+- unicorn
 - Postgresql
 - PGAdmin 4
 - React
 
 
-### Structure
+### Project Structure
 app: FastAPI backend
 - crud
 - database
@@ -42,13 +47,15 @@ environment:
 CICD & Packages:
 - .gitignore
 - Dockerfile
+- .github/workflows and main.yml
 - README.md
 - requirements.txt
 
+
 ### Procedure
 Step 1:
-- Create virtual environment and activation of environment
-- Installation of requirements
+- Create virtual environment and activation ironment
+- Installation uirements
 
 Step 2:
 - Backend API end-points, methods, database in i.e., 'main.py'
@@ -57,9 +64,13 @@ Step 3:
 - Frontend dashboard using React in i.e., 'App.js'
 
 Step 4:
+- Write 'main.yml' file inside '.github\workflows' directory
+With every new commits, this automates CI/CD using GitHub Action
+
+Step 5:
 - Build Dockerfile
 
-- Docker container
+- Build Docker container
 
 `docker build --no-cache -t data-pipeline .      `
 
@@ -71,16 +82,12 @@ Step 4:
 
 `npm start`
 
-- Run Flask Backend Specifically
+- Run Flask Backend Specifically (to test various endpoints)
 
 `uvicorn app.main:app --reload`
 
-Step 5:
-- Write 'main.yml' file inside '.github\workflows' directory
-With every new commits, this automates CI/CD using GitHub Action
-
 Step 6:
-- Deployment on Render
+- Deployment on Render, correct CI/CD should do it automatically every time a new change is made.
 
 
 ### Deployment on Render [NYD]
@@ -104,7 +111,6 @@ Step 6:
 
 8. Click Deploy Web Service
 
-
 - **Deployed Data Pipeline Dashboard Link:** [NYD]
 
 
@@ -117,7 +123,6 @@ Step 6:
 - Data stored on PGAdmin (PostgreSQL database)
 
 ![onpgadmin_db](https://github.com/user-attachments/assets/18caa943-6f98-462d-b563-14f3a02c9264)
-
 
 
 - Fetching data (POST method)
@@ -133,7 +138,6 @@ Step 6:
 - Original data source (API)
 
 ![fakeapi](https://github.com/user-attachments/assets/b3efdd26-9674-4195-a01f-16164e1b7c18)
-
 
 
 ### How Issues Encountered Were Solved: Troubleshoot
@@ -154,14 +158,14 @@ It should upgrade the systen fron local database, PGAdmin 4 for my case, to clou
 
 ### Run Locally
 - Download the repo
-- Go to the directory
+- Go to the root directory
 - Activate the environment: `venv\Scripts\activate`
-- Run FastAPI: `uvicorn app.main:app --reload`
-- Run React app: `npm start`
+- Run FastAPI from root: `uvicorn app.main:app --reload`
+- Get into 'dashboard' and run React app: `npm start`
  on Render
 Note:
 The required packages are installed inside the `venv`.
-To install a specific version, update in the `requirements.txt` and run the following command after the activation of venv:
+To install a specific version, update in the `requirements.txt` and run the following command after the activation v:
 `pip install -r requirements.txt`
 
 Thank you,
