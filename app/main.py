@@ -5,7 +5,6 @@ from app import models, schemas, crud
 import requests
 
 ''' This is the FAST API main file serving as the backend.
-At the end, CORS middleware has been enabled to make the data_fetching functional on the react console.
 With retrieval of 'products', multiple experiements were undertaken to help the systemm make functional'''
 
 # Initialization of database
@@ -60,8 +59,8 @@ def fetch_products(db: Session = Depends(get_db)):
     
     return {"message": "Products stored successfully!"}
 
-
-'''I faced issue on react as regards the fetched data placement'''
+'''CORS middleware has been enabled to make the data_fetching functional on the react console.
+I faced issue on react as regards the fetched data placement'''
 # cors enabled to get fetched_data on react console, this resolved the react issue
 from fastapi.middleware.cors import CORSMiddleware
 
