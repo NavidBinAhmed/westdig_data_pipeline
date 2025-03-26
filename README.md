@@ -153,7 +153,8 @@ Steps to fix:
 - uvicorn & unicorn
 - cloud database setup
 - retry 
-It should upgrade the systen fron local database, PGAdmin 4 for my case, to cloud.
+
+    It should upgrade the systen fron local database, PGAdmin 4 for my case, to cloud.
 
 
 ### Run Locally
@@ -161,9 +162,9 @@ It should upgrade the systen fron local database, PGAdmin 4 for my case, to clou
 - Go to the root directory
 - Activate the environment: `venv\Scripts\activate`
 - Run FastAPI from root: `uvicorn app.main:app --reload`
-- Get into 'dashboard' and run React app: `npm start`
- on Render
-Note:
+- get into 'dashboard' and run React app: `npm start` on Render
+
+    Note:
 The required packages are installed inside the `venv`.
 To install a specific version, update in the `requirements.txt` and run the following command after the activation v:
 `pip install -r requirements.txt`
