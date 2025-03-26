@@ -22,6 +22,11 @@ def get_db():
     finally:
         db.close()
 
+## test if base api works
+@app.get("/")
+def read_root():
+    return {"message": "Data Pipeline API is working. Proceed..."}
+
 # This is the route to create a new product, as an API endpoint
 @app.post("/products/", response_model=schemas.ProductResponse)
 def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
