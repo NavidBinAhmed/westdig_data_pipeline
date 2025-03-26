@@ -1,4 +1,4 @@
-## End-end Data Pipeline - Demo
+## End-end Data Pipeline : having deployment on Render issue- comnbined back and front end is encounrering troubleshoot (working)
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 ### Features
@@ -49,36 +49,41 @@ CICD & Packages:
 Step 1:
 - Create virtual environment and activation of environment
 - Installation of requirements
-- API end points define in 'main.py'
-- Build Dockerfile and Yaml file
 
 Step 2:
-- Build Docker container:
+- Backend API end-points, methods, database in i.e., 'main.py'
+
+Step 3:
+- Frontend dashboard using React in i.e., 'App.js'
+
+Step 4:
+- Build Dockerfile
+
+- Docker container
 
 `docker build --no-cache -t data-pipeline .      `
 
-- Run Docker image :
+- Run Docker image 
 
 `docker run -p 8000:8000 data-pipeline`
 
-- Run Flask Backend:
+- Run Dashboard (React Frontent)
+
+`npm start`
+
+- Run Flask Backend Specifically
 
 `uvicorn app.main:app --reload`
 
-- Run React Frontent
-`npm start`
-
-Step 3:
-- Frontend dashboard using React
-
-Step 4:
-- Automate CICD using GitHub Action
-
 Step 5:
-- Deployment
+- Write 'main.yml' file inside '.github\workflows' directory
+With every new commits, this automates CI/CD using GitHub Action
+
+Step 6:
+- Deployment on Render
 
 
-### Deployment on Render
+### Deployment on Render [NYD]
 1. Picked `Webservices`
 
 2. Selected `Git Public Repository` (for privet repository, sign-in to GitHub under 'Git Provider' is required)
@@ -100,11 +105,7 @@ Step 5:
 8. Click Deploy Web Service
 
 
-- **Deployed Backend FastAPI Link:** [NYD]
-
-- **Deployed Frontend React Link:** [NYD]
-
-- **Deployed (Combined) Link:** [NYD]
+- **Deployed Data Pipeline Dashboard Link:** [NYD]
 
 
 ### Data Visualization Dashboard
@@ -135,13 +136,29 @@ Step 5:
 
 
 
+### How Issues Encountered Were Solved: Troubleshoot
+1. React functioal issue: no log was found on console for 'fetch_products'
+- CORS middleware has been enabled to make the data_fetching functional on the react console.
+
+2. CI/CD issue: Failure multiple times due to script error
+- Modified and worked fine
+- Added deployment script in production (for AWS)
+
+3. Deployment on Render issue: Comnbined back and front end was encounrering troubleshoot (ongoing)
+Steps to fix:
+- uvicorn & unicorn
+- cloud database setup
+- retry 
+It should upgrade the systen fron local database, PGAdmin 4 for my case, to cloud.
+
+
 ### Run Locally
 - Download the repo
 - Go to the directory
 - Activate the environment: `venv\Scripts\activate`
 - Run FastAPI: `uvicorn app.main:app --reload`
 - Run React app: `npm start`
-
+ on Render
 Note:
 The required packages are installed inside the `venv`.
 To install a specific version, update in the `requirements.txt` and run the following command after the activation of venv:

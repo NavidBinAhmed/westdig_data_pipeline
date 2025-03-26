@@ -5,8 +5,8 @@ from app import models, schemas, crud
 import requests
 
 ''' This is the FAST API main file serving as the backend.
-1. At the end, CORS middleware has been enabled to make the data_fetching functional on the react console.
-2. At the retrieval of 'products' section, multiple experiements were undertaken to help the react app work.'''
+At the end, CORS middleware has been enabled to make the data_fetching functional on the react console.
+With retrieval of 'products', multiple experiements were undertaken to help the systemm make functional'''
 
 # Initialization of database
 Base.metadata.create_all(bind=engine)
