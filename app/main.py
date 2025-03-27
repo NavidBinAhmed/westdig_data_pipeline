@@ -29,11 +29,6 @@ def read_root():
 @app.post("/products/", response_model=schemas.ProductResponse)
 def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
     return crud.create_product(db, product)
-
-'''# Route to retrieve products
-@app.get("/products/", response_model=list[schemas.ProductResponse])
-def read_products(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    return crud.get_products(db, skip=skip, limit=limit)'''
     
 '''With retrieval of 'products', multiple experiements were undertaken to help the systemm make functional'''
 @app.get("/products/")
@@ -66,7 +61,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all domains during testing
+    allow_origins=["*"],  # Allows all domains during testing
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -8,7 +8,7 @@ const API_URL = "http://127.0.0.1:8000/products/";
 function App() {
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
+   useEffect(() => {
       axios.get(API_URL)
           .then(response => {
               console.log("Fetched Data:", response.data);  // for Debugging
@@ -16,7 +16,6 @@ function App() {
           })
           .catch(error => console.error("Error fetching products:", error));
   }, []);
-  
 
     // Data for visualization
     const chartData = products.map(p => ({ name: p.name, price: p.price }));
@@ -25,7 +24,7 @@ function App() {
         <div style={{ padding: "20px" }}>
             <h1>Navid's Data Pipeline Dashboard: Demo for Western Digital</h1>
             
-            {/* Data Table */}
+            {/* Data Table*/}
             <Table 
                 dataSource={products} 
                 columns={[

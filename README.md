@@ -2,7 +2,7 @@
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 
-### having deployment issue- comnbined back and frontend is encounrering troubleshoot (working)
+### API was down while working on Full-stack & deployment: using Nginx with concurrently to deploy (working)
 
 
 ### Features
@@ -151,6 +151,7 @@ Step 6:
 3. Deployment on Render issue: Comnbined back and front end was encounrering troubleshoot (ongoing)
 Steps to fix:
 - uvicorn & unicorn
+- set up concurrently
 - cloud database setup
 - retry 
 
@@ -162,7 +163,7 @@ Steps to fix:
 - Go to the root directory
 - Activate the environment: `venv\Scripts\activate`
 - Run FastAPI from root: `uvicorn app.main:app --reload`
-- get into 'dashboard' and run React app: `npm start` on Render
+- Get into 'dashboard' and run React dashboard app: `npm start`
 
     Note:
 The required packages are installed inside the `venv`.
