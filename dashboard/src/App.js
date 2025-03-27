@@ -33,7 +33,7 @@ function App() {
                     { title: "Category", dataIndex: "category", key: "category" }
                 ]} 
                 rowKey="id"
-                pagination={{ pageSize: 5 }}
+                pagination={{ pageSize: 10 }}
             />
 
             {/* Bar Chart Visualization */}
