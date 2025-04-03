@@ -42,7 +42,7 @@ const App = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#84d888" />
         </BarChart>
       </ResponsiveContainer>
       <Table dataSource={data} columns={[{ title: "Name", dataIndex: "name", key: "name" }]} />
