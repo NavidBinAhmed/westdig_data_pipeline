@@ -2,9 +2,6 @@
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 
-### working on deployment
-
-
 ### Features
  - System fetches and shows raw data on browser in a json formant from an external e-commerce API
 
@@ -27,6 +24,7 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 - Postgresql
 - PGAdmin 4
 - React
+- Render
 
 
 ### Project Structure
@@ -50,6 +48,7 @@ CICD & Packages:
 - .github/workflows and main.yml
 - README.md
 - requirements.txt
+- Render.yaml
 
 
 ### Procedure
@@ -58,14 +57,14 @@ Step 1:
 - Installation uirements
 
 Step 2:
-- Backend API end-points, methods, database in i.e., 'main.py'
+- Build backend API end-points, methods, database in i.e., 'main.py'
 
 Step 3:
-- Frontend dashboard using React in i.e., 'App.js'
+- Build frontend dashboard using React in i.e., 'App.js'
 
 Step 4:
 - Write 'main.yml' file inside '.github\workflows' directory
-With every new commits, this automates CI/CD using GitHub Action
+- With every new commits, this automates CI/CD using GitHub Action
 
 Step 5:
 - Build Dockerfile
@@ -87,31 +86,44 @@ Step 5:
 `uvicorn app.main:app --reload`
 
 Step 6:
-- Deployment on Render, correct CI/CD should do it automatically every time a new change is made.
+- Deployment on Render
+- Create cloud database `fastapidb' on Render 
+- Update `env_variable` on Render and database URL `database.py` file
+- Deploy backend, update API URL on `App.js` and deploy frontend
+- correct CI/CD should do it automatically every time a new change is made.
 
 
-### Deployment on Render [NYD]
-1. Picked `Webservices`
+### Deployment on Render - Backend 
+1. Created `Postgres` database on Render which migrated local database from PGAdmin to cloud
 
-2. Selected `Git Public Repository` (for privet repository, sign-in to GitHub under 'Git Provider' is required)
+2. Updated Environemnt Variable with `Internal Database URL`
 
-3. Next, picked a Name as URL, and Python 3 as *Language
+3. Picked `Webservices`
 
-4. Branch is main and Region is Oregon as default
+4. Selected `Git Public Repository` (for privet repository, sign-in to GitHub under 'Git Provider' is required)
 
-5. Keep Root Directory as it is, it will redirect from GitHub
+5. Next, picked the URL, and Python 3 as Language
 
-6. `Build Command`
+6. Branch is main and Region is Oregon as default
+
+7. Keep Root Directory as it is, it will redirect from GitHub
+
+8. `Build Command`
 - pip install -r requirements.txt
 
-`Start Command` ( app.api_file.py:app )
-- gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
+`Start Command`
+- uvicorn app.main:app --host 0.0.0.0 --port 8000
 
-7. Select Subscription Plan, Free in my case
+9. Select Subscription Plan, Free in my case
 
-8. Click Deploy Web Service
+10. Click `Deploy Web Service`
 
-- **Deployed Data Pipeline Dashboard Link:** [NYD]
+**Deployment on Render - Frontend** 
+After running build version for production, exceptions are in the followings only:
+
+
+
+- **Deployed Data Pipeline Dashboard Link:** [Backend](https://fastapi-f3s0.onrender.com/)
 
 
 ### Data Visualization Dashboard
