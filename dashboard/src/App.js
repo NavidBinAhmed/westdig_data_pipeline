@@ -10,10 +10,10 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_URL}/data`)  // Adjust this endpoint as per your backend
+    fetch(`${API_URL}/products`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Network response is not ok");
         }
         return response.json();
       })
