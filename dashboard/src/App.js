@@ -3,50 +3,54 @@ import { Table } from "antd";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const API_URL = "https://fastapi-f3s0.onrender.com/";
-console.log(API_URL);
 
-function App() {
-    const [products, setProducts] = useState([]);
-
+const App = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
     useEffect(() => {
-        fetch(`${API_URL}/products`)
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error("Error fetching data:", error));
-    }, []);
+        fetch(`${API_URL}/products`)  // Adjust this endpoint as per your backend
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Fetched Data:", data);
+            setData(data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+            setError(error);
+            setLoading(false);
+          });
+      }, []);
 
+
+if (loading) return <p>Loading...</p>;
+if (error) return <p>Error: {error.message}</p>;
+    
     // Data for visualization
     const chartData = products.map(p => ({ name: p.name, price: p.price }));
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Navid's Data Pipeline Dashboard: Demo for Western Digital</h1>
-            
-            {/* Data Table*/}
-            <Table 
-                dataSource={products} 
-                columns={[
-                    { title: "Name", dataIndex: "name", key: "name" },
-                    { title: "Price", dataIndex: "price", key: "price" },
-                    { title: "Category", dataIndex: "category", key: "category" }
-                ]} 
-                rowKey="id"
-                pagination={{ pageSize: 10 }}
-            />
-
-            {/* Bar Chart Visualization */}
-            <h2>Price Analysis</h2>
-            <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={chartData}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="price" fill="#82ca9d" />
-                </BarChart>
-            </ResponsiveContainer>
+        <div>
+          <h1>Regretting Data Pipeline Dashboard</h1>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={data}>
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="value" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
+          <Table dataSource={data} columns={[{ title: "Name", dataIndex: "name", key: "name" }]} />
         </div>
-    );
-}
-
-export default App;
+      );
+    };
+    
+    export default App;
