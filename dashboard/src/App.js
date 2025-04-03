@@ -20,7 +20,7 @@ const App = () => {
       })
       .then((products) => {
         console.log("Fetched Data:", products);
-        setData(products);
+        setProducts(products);
         setLoading(false);
       })
       .catch((error) => {
@@ -32,6 +32,9 @@ const App = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
+
+// Data for visualization
+const chartData = products.map(p => ({ name: p.name, price: p.price }));
 
   return (
     <div style={{ padding: "20px" }}>
