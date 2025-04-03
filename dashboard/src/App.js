@@ -39,7 +39,7 @@ const App = () => {
       
       {/* Bar Chart */}
       <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={data}>
+        <BarChart data={products}>
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
@@ -50,7 +50,7 @@ const App = () => {
       
       {/* Table */}
       <Table
-        dataSource={data}
+        dataSource={products}
         columns={[
           { title: "Name", dataIndex: "name", key: "name" },
           { title: "Price", dataIndex: "price", key: "price" },
