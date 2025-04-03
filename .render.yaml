@@ -1,4 +1,5 @@
 services:
+  # FastAPI Backend
   - type: web
     name: fastapi-backend
     env: python
@@ -11,4 +12,13 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
 
-    
+  # React Frontend
+  - type: static
+    name: react-frontend
+    repo: https://github.com/NavidBinAhmed/westdig_data_pipeline
+    branch: main
+    buildCommand: npm install && npm run build
+    publishPath: dashboard/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://fastapi-f3s0.onrender.com/
