@@ -6,7 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL || "https://fastapi-f3s0.onrender.
 console.log("API_URL:", API_URL);
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,9 +18,9 @@ const App = () => {
         }
         return response.json();
       })
-      .then((data) => {
+      .then((products) => {
         console.log("Fetched Data:", data);
-        setData(data);
+        setData(products);
         setLoading(false);
       })
       .catch((error) => {
@@ -34,31 +34,34 @@ const App = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h1> Data Pipeline Dashboard</h1>
       
-      {/* Bar Chart */}
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={products}>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="price" fill="#84d888" /> {/* Use 'price' here */}
-        </BarChart>
-      </ResponsiveContainer>
-      
-      {/* Table */}
-      <Table
-        dataSource={products}
+    {/* Data Table */}
+    <Table 
+        dataSource={products} 
         columns={[
-          { title: "Name", dataIndex: "name", key: "name" },
-          { title: "Price", dataIndex: "price", key: "price" },
-          { title: "Category", dataIndex: "category", key: "category" }
-        ]}
-      />
-    </div>
-  );
-};
+        { title: "Name", dataIndex: "name", key: "name" },
+        { title: "Price", dataIndex: "price", key: "price" },
+        { title: "Category", dataIndex: "category", key: "category" }
+        ]} 
+        rowKey="id"
+        pagination={{ pageSize: 5 }}
+    />
+
+    {/* Bar Chart Visualization */}
+        <h2>Price Analysis</h2>
+        <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={chartData}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="price" fill="#82ca9d" />
+        </BarChart>
+        </ResponsiveContainer>
+        </div>
+    );
+}
 
 export default App;
