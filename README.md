@@ -1,4 +1,4 @@
-## End-end Data Pipeline
+## Full-stack end-end data pipeline with deployment using FastAPI, React and Render
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 
