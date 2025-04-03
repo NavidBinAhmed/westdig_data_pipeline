@@ -19,7 +19,7 @@ const App = () => {
         return response.json();
       })
       .then((products) => {
-        console.log("Fetched Data:", data);
+        console.log("Fetched Data:", products);
         setData(products);
         setLoading(false);
       })
@@ -52,7 +52,7 @@ const App = () => {
     {/* Bar Chart Visualization */}
         <h2>Price Analysis</h2>
         <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={chartData}>
+        <BarChart products={chartData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
