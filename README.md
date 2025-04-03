@@ -3,7 +3,7 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 
 
 ### Features
- - System fetches and shows raw data on browser in a json formant from an external e-commerce API
+ - System fetches data on browser in a json formant from an external e-commerce API
 
  - Visualizes on a React webapp as a dashboard 
 
@@ -25,7 +25,9 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 - PGAdmin 4
 - React
 - Render
+- VS Code
 
+[![Tools](https://skillicons.dev/icons?i=python,vscode,github,fastapi,react,&theme=light)](https://skillicons.dev)
 
 ### Project Structure
 app: FastAPI backend
@@ -54,16 +56,16 @@ CICD & Packages:
 ### Procedure
 Step 1:
 - Create virtual environment and activation ironment
-- Installation uirements
+- Installation of requirements
 
 Step 2:
-- Build backend API end-points, methods, database in i.e., 'main.py'
+- Build backend API end-points, database in i.e., `app`
 
 Step 3:
-- Build frontend dashboard using React in i.e., 'App.js'
+- Build frontend dashboard using React in i.e., `dashboard`
 
 Step 4:
-- Write 'main.yml' file inside '.github\workflows' directory
+- Implement CI/CD and `main.yml` file inside `.github\workflows` directory
 - With every new commits, this automates CI/CD using GitHub Action
 
 Step 5:
@@ -86,10 +88,9 @@ Step 5:
 `uvicorn app.main:app --reload`
 
 Step 6:
-- Deployment on Render
-- Create cloud database `fastapidb' on Render 
-- Update `env_variable` on Render and database URL `database.py` file
-- Deploy backend, update API URL on `App.js` and deploy frontend
+- For the deployment on Render, created cloud database `fastapidb' on Render 
+- Updated `env_variable` on Render and database URL in `database.py` file
+- Deploy backend, update deployed API URL on `App.js` and deploy frontend
 - correct CI/CD should do it automatically every time a new change is made.
 
 
@@ -116,14 +117,27 @@ Step 6:
 
 9. Select Subscription Plan, Free in my case
 
-10. Click `Deploy Web Service`
+Please state`
 
 **Deployment on Render - Frontend** 
 After running build version for production, exceptions are in the followings only:
 
+3. Picked `New Static Site`
+
+8. `Build Command`
+- npm install && npm run build
+
+or (via Settings page, if there needs to update)
+- cd dashboard && npm install && npm run build
+
+`Publish Directory`
+- build
+
+or (via Settings page, if there needs to update)
+- dashboard/build
 
 
-- **Deployed Data Pipeline Dashboard Link:** [Backend](https://fastapi-f3s0.onrender.com/)
+- **Deployed Data Pipeline Dashboard:** [**Link**](https://wddp.onrender.com/) ; [**Backend**](https://fastapi-f3s0.onrender.com/)
 
 
 ### Data Visualization Dashboard
@@ -160,18 +174,19 @@ After running build version for production, exceptions are in the followings onl
 - Modified and worked fine
 - Added deployment script in production (for AWS)
 
-3. Deployment on Render issue: Comnbined back and front end was encounrering troubleshoot (ongoing)
+3. 1. Deployment on Render issue
 Steps to fix:
 - uvicorn & unicorn
 - set up concurrently
 - cloud database setup
-- retry 
 
-    It should upgrade the systen fron local database, PGAdmin 4 for my case, to cloud.
+    Cloud database on Render upgrades DBMS fron local database, PGAdmin 4 for my case, to cloud.
+    The app was deployed separately as to make it easier for debugging and collaboration (industry standard).
 
-4.
-Error:
-
+3. 2. Frontend deployment issue
+ Resolved by using the following build and publish commands on Render's `Settings` page:
+- cd dashboard && npm install && npm run build
+- dashboard/build
 
 ### Run Locally
 - Download the repo
@@ -179,11 +194,12 @@ Error:
 - Activate the environment: `venv\Scripts\activate`
 - Run FastAPI from root: `uvicorn app.main:app --reload`
 - Get into 'dashboard' and run React dashboard app: `npm start`
+- Backend: http://127.0.0.1:8000
+- Frontend: http://localhost:3000
 
-    Note:
+Please state:
 The required packages are installed inside the `venv`.
 To install a specific version, update in the `requirements.txt` and run the following command after the activation v:
 `pip install -r requirements.txt`
 
-Thank you,
-for any installation related help, don't hesitate to give a heads up.
+Thank you!
