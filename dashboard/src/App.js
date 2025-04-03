@@ -36,22 +36,27 @@ const App = () => {
   return (
     <div>
       <h1> Data Pipeline Dashboard</h1>
+      
+      {/* Bar Chart */}
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#84d888" />
+          <Bar dataKey="price" fill="#84d888" /> {/* Use 'price' here */}
         </BarChart>
       </ResponsiveContainer>
+      
+      {/* Table */}
       <Table
-  dataSource={data}
-  columns={[
-    { title: "Name", dataIndex: "name", key: "name" },
-    { title: "Price", dataIndex: "price", key: "price" },
-    { title: "Category", dataIndex: "category", key: "category" }
-  ]} />
+        dataSource={data}
+        columns={[
+          { title: "Name", dataIndex: "name", key: "name" },
+          { title: "Price", dataIndex: "price", key: "price" },
+          { title: "Category", dataIndex: "category", key: "category" }
+        ]}
+      />
     </div>
   );
 };
