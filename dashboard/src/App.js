@@ -45,7 +45,13 @@ const App = () => {
           <Bar dataKey="value" fill="#84d888" />
         </BarChart>
       </ResponsiveContainer>
-      <Table dataSource={data} columns={[{ title: "Name", dataIndex: "Price", key: "Category" }]} />
+      <Table
+  dataSource={data}
+  columns={[
+    { title: "Name", dataIndex: "name", key: "name" },
+    { title: "Price", dataIndex: "price", key: "price" },
+    { title: "Category", dataIndex: "category", key: "category" }
+  ]} />
     </div>
   );
 };
