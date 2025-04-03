@@ -21,4 +21,4 @@ services:
     publishPath: dashboard/build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://fastapi-f3s0.onrender.com/
+        value: https://wddp.onrender.com/
