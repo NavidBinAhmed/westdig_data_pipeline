@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: fastapi-backend
+    env: python
+    repo: https://github.com/NavidBinAhmed/westdig_data_pipeline
+    branch: main
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8000
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
