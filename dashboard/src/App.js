@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Table } from "antd";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-const API_URL = "http://127.0.0.1:8000/products/";
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+console.log(API_URL);
 
 function App() {
     const [products, setProducts] = useState([]);
 
-   useEffect(() => {
-      axios.get(API_URL)
-          .then(response => {
-              console.log("Fetched Data:", response.data);  // for Debugging
-              setProducts(response.data);
-          })
-          .catch(error => console.error("Error fetching products:", error));
-  }, []);
+    useEffect(() => {
+        fetch(`${API_URL}/products`)
+            .then(response => response.json())
+            .then(data => setProducts(data))
+            .catch(error => console.error("Error fetching data:", error));
+    }, []);
 
     // Data for visualization
     const chartData = products.map(p => ({ name: p.name, price: p.price }));

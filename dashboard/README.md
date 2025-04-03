@@ -91,3 +91,14 @@ Solution demo on Dockerfile:
 `COPY app /app/app`  
 
 `RUN ls -l /app/app`
+
+
+### Run Stacks Individually
+modify in `package.json`:
+
+"scripts": {
+ "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},

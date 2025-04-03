@@ -2,7 +2,7 @@
 This repo contains tech-stacks that demonstrates a mini data pipeline and dashboard visualization that leverages an e-commerce API
 
 
-### API was down while working on Full-stack & deployment: using Nginx with concurrently to deploy (working)
+### working on deployment
 
 
 ### Features
@@ -156,6 +156,9 @@ Steps to fix:
 - retry 
 
     It should upgrade the systen fron local database, PGAdmin 4 for my case, to cloud.
+
+4.
+Error:
 
 
 ### Run Locally
