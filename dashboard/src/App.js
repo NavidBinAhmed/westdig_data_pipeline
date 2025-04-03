@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1> Data Pipeline Dashboard</h1>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
           <XAxis dataKey="name" />
@@ -45,7 +45,7 @@ const App = () => {
           <Bar dataKey="value" fill="#84d888" />
         </BarChart>
       </ResponsiveContainer>
-      <Table dataSource={data} columns={[{ title: "Name", dataIndex: "name", key: "name" }]} />
+      <Table dataSource={data} columns={[{ title: "Name", dataIndex: "Price", key: "Category" }]} />
     </div>
   );
 };
