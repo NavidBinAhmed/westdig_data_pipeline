@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-const API_URL = process.env.REACT_APP_API_URL || "https://fastapi-f3s0.onrender.com/";
+const API_URL = process.env.REACT_APP_API_URL || "https://fastapi-f3s0.onrender.com";
 console.log("API_URL:", API_URL);
 
 const App = () => {
