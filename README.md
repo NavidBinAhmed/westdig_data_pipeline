@@ -27,7 +27,7 @@ This repo contains tech-stacks that demonstrates a mini data pipeline and dashbo
 - Render
 - VS Code
 
-[![Tools](https://skillicons.dev/icons?i=python,vscode,github,fastapi,react,&theme=light)](https://skillicons.dev)
+[![Tools](https://skillicons.dev/icons?i=python,fastapi,react,postgresql,vscode,github,&theme=light)](https://skillicons.dev)
 
 ### Project Structure
 app: FastAPI backend
