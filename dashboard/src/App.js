@@ -11,7 +11,7 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_URL}/products`)
+    fetch(`${API_URL}/products/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response is not ok");
