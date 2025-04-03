@@ -16,11 +16,12 @@
     "recharts": "^2.15.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "cd app && uvicorn main:app --host 127.0.0.1 --port 8000 --reload",
-    "frontend": "react-scripts start"
-  },
+"scripts": {
+  "start": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently --kill-others-on-fail \"npm run backend\" \"react-scripts start\"",
+  "backend": "cd ../app && uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+  "build": "react-scripts build"
+},
+
   "eslintConfig": {
     "extends": [
       "react-app",
