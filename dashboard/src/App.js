@@ -33,8 +33,11 @@ const App = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-// Data for visualization
-const chartData = products.map(p => ({ name: p.name, price: p.price }));
+
+// Data for visualization (Filter only valid numeric prices)
+  const chartData = products
+    .filter((p) => typeof p.price === "number" && !isNaN(p.price)) // Ensure valid numbers
+    .map((p) => ({ name: p.name, price: p.price }));
 
   return (
     <div style={{ padding: "20px" }}>
@@ -55,7 +58,7 @@ const chartData = products.map(p => ({ name: p.name, price: p.price }));
     {/* Bar Chart Visualization */}
         <h2>Price Analysis</h2>
         <ResponsiveContainer width="100%" height={300}>
-        <BarChart products={chartData}>
+        <BarChart data={chartData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
@@ -65,6 +68,6 @@ const chartData = products.map(p => ({ name: p.name, price: p.price }));
         </ResponsiveContainer>
         </div>
     );
-}
+};
 
 export default App;
