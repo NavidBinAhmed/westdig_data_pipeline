@@ -137,7 +137,7 @@ or (via Settings page, if there needs to update)
 - dashboard/build
 
 
-- **Deployed Data Pipeline Dashboard:** [**Link**](https://wddp.onrender.com/) ; [**Backend**](https://fastapi-f3s0.onrender.com/)
+**Deployed Data Pipeline Dashboard:** [**Link**](https://wddp.onrender.com/) ; [**Backend**](https://fastapi-f3s0.onrender.com/)
 
 
 ### Data Visualization Dashboard
